@@ -67,17 +67,74 @@ Directions for my favourite places
 
 [click here to view my aboutme page] (https://github.com/44-563-WebApps-F21/webapps-f21-assignment-3-pragnareddy79/blob/main/aboutme.html)
 
-
+<hr>
 
 # Below are the Food/Drinks that I recommend
 In the below table I am going to describe about two food items and two drink items.
 <table>
-<tr>
- <th>Item Name</th>   <th>Location</th>  <th>Amount</th> 
+    <th>Item Name</th> 
+    <th>Location</th>
+    <th>Amount</th>
+
+<tr>  
+ <td>Haleem</td>
+ <td>Hyderabad House</td>
+ <td>10</td> 
  
- <td>Haleem</td>  <td>Hyderabad House</td>  <td>10</td> 
- <td>Birayani</td>  <td>Ruchi</td>  <td>12</td>
- <td>oreo milkshake</td>  <td>Mc Donald's</td> <td>4</td> 
- <td>Mango Lassi</td>  <td>Bawarchi</td>  <td>3</td> 
  </tr>
- </table>
+ <tr> 
+    <td>Biryani</td>
+    <td>Ruchi</td>
+    <td>12</td> 
+ </tr>
+  <tr>
+    
+    <td>Oreo Milkshake</td> 
+    <td>Mc Donald's</td>
+    <td>4</td>
+    
+  </tr>
+  <tr>
+      <td>Mango Lassi</td>
+      <td>Bawarchi</td>
+      <td>3</td>
+  </tr>
+</table>
+</hr>
+<hr>
+<h1><Code</h1>
+vector<vector<int>> adj;  // adjacency list representation
+    <pre>
+    int n; // number of nodes
+    int s; // source vertex
+    
+    queue<int> q;
+    vector<bool> used(n);
+    vector<int> d(n), p(n);
+    
+    q.push(s);
+    used[s] = true;
+    p[s] = -1;
+    while (!q.empty()) {
+        int v = q.front();
+        q.pop();
+        for (int u : adj[v]) {
+            if (!used[u]) {
+                used[u] = true;
+                q.push(u);
+                d[u] = d[v] + 1;
+                p[u] = v;
+            }
+        }
+    }
+</pre>
+</hr>
+<The algorithm takes as input an unweighted graph and the id of the source vertex s. The input graph can be directed or undirected, it does not matter to the algorithm./>
+Here is the link for my quick-link for the code source
+<a href= "https://cp-algorithms.com/graph/breadth-first-search.html">code source </a>
+    
+     
+ 
+
+
+ 
